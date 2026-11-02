@@ -29,10 +29,23 @@
 .modal{position:absolute;inset:0;background:#0007;z-index:20;display:grid;place-items:center;padding:20px}.dialog{background:#fff;width:min(340px,100%);border-radius:7px;padding:23px 21px;box-shadow:0 10px 22px #0002}.dialog h2{font-size:17px;margin:0 0 10px}.dialog p{font-size:13px;color:#6c737a;line-height:1.7;margin:0 0 19px}.dialog-actions{display:flex;gap:8px}.dialog-actions button{flex:1;border:1px solid #cad0d4;background:white;min-height:41px;border-radius:4px;font-size:12px}.dialog-actions .primary{background:#272e35;color:white;border-color:#272e35}
 @media(max-height:650px){.name-title{margin-top:12px}.name-form{margin-top:22px}.article-view{padding-top:22px}.article-view h1{font-size:25px}.article-view .lead{margin-bottom:13px}.clip{margin-top:8px}.clip h2{font-size:18px}.end-view img{margin:12px auto 8px;width:118px;height:125px}.end-view h1{font-size:24px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+
+/* A simple language switch on the welcome screen */
+.name-view{overflow-y:auto}
+.lang-toggle{display:flex;align-items:center;justify-content:flex-end;gap:13px;min-height:27px;font-size:12px;letter-spacing:0}
+.lang-toggle a{color:#818995;text-decoration:none;padding:3px 0;white-space:nowrap}
+.lang-toggle a.active{color:#28313a;font-weight:750;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.lang-toggle span{color:#c3c8cd}
+.name-view .name-title{margin-top:27px}
+.name-view:lang(en) .name-title{font-size:25px;line-height:1.4;letter-spacing:-.045em}
+.name-view:lang(en) .name-desc{line-height:1.65}
+.name-view:lang(en) .name-form{margin-top:27px}
+.name-view:lang(en) .warn-text{font-size:11px;line-height:1.65}
 </style></head>
 <body><div class="phone" id="phone">
  <div class="status"><span>9:41</span><span class="status-right">▴  ▮▮  ▰</span></div>
- <section class="view name-view" id="nameView">
+ <section class="view name-view" id="nameView" lang="ko">
+  <nav class="lang-toggle" aria-label="Language"><a href="./" class="active" lang="ko" aria-current="page">&#54620;&#44397;&#50612;</a><span aria-hidden="true">|</span><a href="./en.html" lang="en">English</a></nav>
   <h1 class="name-title">지금부터 당신은<br><strong>사이버폭력의 당사자</strong>가 됩니다.</h1>
   <p class="name-desc">휴대전화 화면 속에서 일어나는 일을<br>잠시 경험해 보세요.</p>
   <form class="name-form" id="nameForm"><label class="field-label" for="displayName">채팅방에서 불릴 이름</label><input class="name-field" id="displayName" placeholder="이름 또는 별명" maxlength="10" autocapitalize="off" autocomplete="off" required><p class="hint">실명일 필요는 없습니다. 이름은 저장되지 않습니다.</p><button class="start" type="submit">시작하기</button></form>
